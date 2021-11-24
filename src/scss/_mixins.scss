@@ -1,0 +1,18 @@
+@mixin font-size-family($size, $family: $base-font-family) {
+   font: {
+      size: #{$size}px;
+      family: $family;
+   }
+}
+
+@mixin tablet {
+   @media screen and (max-width: #{$breakpoint-tablet}) {
+     @content;
+   }
+ }
+ 
+ @mixin mobile {
+   @media screen and (max-width: #{$breakpoint-mobile}) {
+      @content;
+    }
+ }

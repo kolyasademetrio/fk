@@ -1,0 +1,47 @@
+@font-face {
+   font-family: 'calibri-regular';
+   src: url('../fonts/calibri/regular/calibri-regular.eot');
+   src: url('../fonts/calibri/regular/calibri-regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/calibri/regular/calibri-regular.woff2') format('woff2'),
+        url('../fonts/calibri/regular/calibri-regular.woff') format('woff'),
+        url('../fonts/calibri/regular/calibri-regular.ttf') format('truetype'),
+        url('../fonts/calibri/regular/calibri-regular.svg#calibri-regular') format('svg');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'calibri-bold';
+   src: url('../fonts/calibri/bold/calibri-bold.eot');
+   src: url('../fonts/calibri/bold/calibri-bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/calibri/bold/calibri-bold.woff2') format('woff2'),
+        url('../fonts/calibri/bold/calibri-bold.woff') format('woff'),
+        url('../fonts/calibri/bold/calibri-bold.ttf') format('truetype'),
+        url('../fonts/calibri/bold/calibri-bold.svg#calibri-bold') format('svg');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'iosevka-regular';
+   src: url('../fonts/iosevka/regular/iosevka-regular.eot');
+   src: url('../fonts/iosevka/regular/iosevka-regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/iosevka/regular/iosevka-regular.woff2') format('woff2'),
+        url('../fonts/iosevka/regular/iosevka-regular.woff') format('woff'),
+        url('../fonts/iosevka/regular/iosevka-regular.ttf') format('truetype'),
+        url('../fonts/iosevka/regular/iosevka-regular.svg#iosevka-regular') format('svg');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'iosevka-bold';
+   src: url('../fonts/iosevka/bold/iosevka-bold.eot');
+   src: url('../fonts/iosevka/bold/iosevka-bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/iosevka/bold/iosevka-bold.woff2') format('woff2'),
+        url('../fonts/iosevka/bold/iosevka-bold.woff') format('woff'),
+        url('../fonts/iosevka/bold/iosevka-bold.ttf') format('truetype'),
+        url('../fonts/iosevka/bold/iosevka-bold.svg#iosevka-bold') format('svg');
+   font-weight: normal;
+   font-style: normal;
+}
