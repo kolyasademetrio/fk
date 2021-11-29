@@ -1,16 +1,21 @@
 p {
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    color: $dark-text-color-1;
-    @include mobile {
-        font-size: $base-font-size-mobile;
-    }
+   font-family: $base-font-family;
+   font-size: $base-font-size;
+   line-height: $base-line-height;
+   color: $dark-text-color-1;
+   @include mobile {
+      font-size: $base-font-size-mobile;
+   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $secondary-font-family-bold;
-    color: $dark-text-color-1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: $secondary-font-family-bold;
+   color: $dark-text-color-1;
 }
 
 h1 {
@@ -28,17 +33,17 @@ h3 {
 //main styles
 html,
 body {
-    height: 100%;
-    scroll-behavior: smooth;
+   height: 100%;
+   scroll-behavior: smooth;
 }
 
 .header {
-   background: #0d1016 url('../images/img1.jpg') center center no-repeat;
+   background: #0d1016 url("../images/img1.jpg") center center no-repeat;
    background-size: cover;
    color: $light-text-color;
 
    @media screen and (max-width: 500px) {
-      background-image: url('../images/img1-mo.jpg');
+      background-image: url("../images/img1-mo.jpg");
    }
 
    &__inner {
@@ -95,12 +100,12 @@ body {
       font-size: 14px;
       color: #92918f;
       padding: 0 0 21px;
-      background: url('../images/scroll-down-icon.png') center bottom no-repeat;
+      background: url("../images/scroll-down-icon.png") center bottom no-repeat;
    }
 }
 
 .about {
-   background: #fff url('../images/about.jpg') center center no-repeat;
+   background: #fff url("../images/about.jpg") center center no-repeat;
    background-size: cover;
    padding: 130px 0 315px;
    display: flex;
@@ -112,7 +117,7 @@ body {
    }
 
    @media screen and (max-width: 500px) {
-      background-image: url('../images/about-mo.jpg');
+      background-image: url("../images/about-mo.jpg");
    }
 
    &__inner {
@@ -138,7 +143,6 @@ body {
    }
 
    &__item-title-text {
-      
       @include mobile {
          position: absolute;
          top: 0;
@@ -152,7 +156,7 @@ body {
       position: relative;
 
       &:before {
-         content: '';
+         content: "";
          display: block;
          position: absolute;
          width: 1px;
@@ -214,7 +218,7 @@ body {
       }
 
       &:after {
-         content: '';
+         content: "";
          display: block;
          position: absolute;
          width: 7px;
@@ -285,14 +289,14 @@ body {
          max-width: none;
       }
    }
-   
+
    &__paragraph {
       font-size: 26px;
       line-height: 1.1;
       color: $light-text-color;
       padding: 0 0 20px;
    }
-   
+
    &__paragraph-strong {
       font-size: 60px;
    }
@@ -301,7 +305,11 @@ body {
 .projects {
    display: flex;
    justify-content: center;
-   padding: 45px 0 60px;
+   padding: 45px 0 10px;
+
+   @include tablet {
+      padding-bottom: 40px;
+   }
 
    &__inner {
       width: $content-width + 20px;
@@ -415,7 +423,7 @@ body {
       text-decoration: underline;
       font-size: 14px;
       padding: 0 0 0 40px;
-      background: url('../images/youtube-btn-icon.png') left center no-repeat;
+      background: url("../images/youtube-btn-icon.png") left center no-repeat;
       background-size: 26px 20px;
 
       @include mobile {
@@ -461,7 +469,7 @@ body {
          font-size: 65%;
       }
    }
-   
+
    &__more-btn-wrap {
       display: flex;
       justify-content: center;
@@ -484,9 +492,20 @@ body {
 }
 
 .stories {
-   padding: 60px 0 100px;
+   padding: 105px 0 100px;
    display: flex;
    justify-content: center;
+   background: url("../images/img2.jpg") top center no-repeat;
+   background-size: 100% auto;
+   overflow: hidden;
+
+   @include tablet {
+      padding-top: 60px;
+   }
+
+   @include mobile {
+      background-image: url("../images/img2-mo.jpg");
+   }
 
    &__inner {
       width: $content-width + 20px;
@@ -501,12 +520,51 @@ body {
       text-align: center;
       text-transform: uppercase;
       padding: 0 0 55px;
+
+      @include tablet {
+         padding-bottom: 10px;
+      }
+   }
+
+   &__subtitle {
+      padding: 115px 0 0;
+      text-align: center;
+
+      @include tablet {
+         padding-top: 60px;
+         text-transform: uppercase;
+      }
+   }
+
+   &__content {
+      display: flex;
+      align-items: flex-start;
+
+      @include tablet {
+         flex-wrap: wrap;
+      }
    }
 
    &__items {
       display: flex;
       justify-content: flex-start;
-      padding: 0 0 60px;
+      flex: 0 0 auto;
+
+      &:not(.slick-initialized) {
+         padding-bottom: 60px;
+      }
+
+      @include tablet {
+         width: 720px;
+      }
+
+      @include mobile {
+         width: 100%;
+      }
+
+      .slick-track {
+         padding-bottom: 60px;
+      }
    }
 
    &__item {
@@ -514,6 +572,10 @@ body {
       width: 165px;
       &:not(:last-child) {
          margin: 0 30px 0 0;
+
+         @include tablet {
+            margin-right: 20px;
+         }
       }
 
       &:nth-child(odd) {
@@ -526,7 +588,7 @@ body {
       overflow: hidden;
 
       &:after {
-         content: '';
+         content: "";
          display: block;
          width: 200%;
          height: 100px;
@@ -563,5 +625,429 @@ body {
    &__price {
       color: $yellow-color;
       display: block;
+   }
+
+   &__text-wrap {
+      padding: 65px 0 0 80px;
+      position: relative;
+
+      @include tablet {
+         padding-top: 88px;
+      }
+
+      &:before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: -9px;
+         left: -9px;
+         width: 18px;
+         height: 18px;
+         border-radius: 50%;
+         background-color: $yellow-color;
+      }
+   }
+
+   &__line,
+   &__line-1 {
+      position: absolute;
+      background-color: $yellow-color;
+      width: 2px;
+   }
+
+   &__line {
+      top: 70px;
+      left: 60px;
+      bottom: 0;
+
+      @include tablet {
+         bottom: auto;
+         right: 0;
+         height: 2px;
+         width: auto;
+      }
+   }
+
+   &__line-1 {
+      transform: rotate(-41deg);
+      top: -6px;
+      height: 88px;
+      left: 31px;
+   }
+
+   &__paragraph {
+      font-size: 16px;
+   }
+}
+
+.plans {
+   padding: 85px 0 85px;
+   display: flex;
+   justify-content: center;
+   background: url("../images/img3.jpg") top center no-repeat;
+   background-size: cover;
+
+   @include mobile {
+      background-image: url("../images/img3-mo.jpg");
+      padding-top: 95px;
+      padding-bottom: 90px;
+   }
+
+   &__inner {
+      width: 1464px;
+      padding: 0 18px;
+
+      @media screen and (max-width: 1464px) {
+         width: 1160px;
+      }
+
+      @include tablet {
+         width: 100%;
+      }
+   }
+
+   &__title {
+      text-align: center;
+      text-transform: uppercase;
+      color: $light-text-color;
+      padding: 0 0 20px;
+
+      @include tablet {
+         padding-bottom: 30px;
+      }
+   }
+
+   &__content-item {
+      display: flex;
+      justify-content: space-between;
+
+      @include tablet {
+         flex-wrap: wrap;
+         flex-direction: column-reverse;
+      }
+   }
+
+   &__images {
+      width: 55%;
+      flex: 1 0 55%;
+
+      @include tablet {
+         width: 100%;
+         flex-basis: 100%;
+         margin-bottom: 35px;
+      }
+   }
+
+   &__text {
+      padding: 0 30px 0 170px;
+      color: $light-text-color;
+
+      @media screen and (max-width: 1464px) {
+         padding-left: 0;
+      }
+
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+         color: $light-text-color;
+      }
+   }
+
+   &__content-item-title {
+      font-size: 48px;
+      text-transform: uppercase;
+
+      @include tablet {
+         font-size: 60px;
+      }
+   }
+
+   &__content-item-subtitle {
+      font-size: 22px;
+      text-transform: uppercase;
+
+      @include tablet {
+         font-size: 24px;
+      }
+   }
+
+   &__paragraph {
+      font-size: 14px;
+      padding: 25px 0 0;
+
+      @include tablet {
+         font-size: 20px;
+         padding-top: 20px;
+      }
+   }
+
+   &__price {
+      font-size: 16px;
+      text-transform: uppercase;
+      font-family: $secondary-font-family-bold;
+      padding: 45px 0 0;
+
+      @include tablet {
+         font-size: 24px;
+         padding-top: 50px;
+      }
+   }
+
+   &__price-alert {
+      color: $yellow-color;
+
+      @include tablet {
+         display: block;
+      }
+   }
+}
+
+.helpus {
+   padding: 115px 0 185px;
+   background: url("../images/img4.jpg") center center no-repeat;
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+
+   @include mobile {
+      background-image: url('../images/img4-mo.jpg');
+      padding-bottom: 105px;
+   }
+
+   &__items-inner {
+      width: $content-width + 20px;
+      padding: 0 18px;
+
+      @include tablet {
+         width: 100%;
+      }
+   }
+
+   &__items-title {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 36px;
+      padding: 0 0 50px;
+   }
+
+   &__items-content {
+      display: flex;
+      justify-content: space-between;
+
+      @include mobile {
+         flex-wrap: wrap;
+      }
+   }
+
+   &__items-item {
+      background-color: $yellow-color;
+      padding: 28px 10px 25px;
+      flex: 1 1 50%;
+      margin: 0 7px 12px;
+      text-align: center;
+      color: $light-text-color;
+
+      @include mobile {
+         margin-left: 0;
+         margin-right: 0;
+         flex-basis: 100%;
+         padding-top: 23px;
+      }
+
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+         color: $light-text-color;
+      }
+   }
+
+   &__items-item-title {
+      font-size: 18px;
+      text-transform: uppercase;
+      padding: 0 0 17px;
+
+      @include mobile {
+         font-size: 24px;
+      }
+   }
+
+   &__items-item-type {
+      font-size: 18px;
+      font-family: $base-font-family-bold;
+      padding: 0 0 5px;
+
+      @include mobile {
+         font-size: 18px;
+      }
+   }
+
+   &__items-item-card-number {
+      font-size: 22px;
+      font-family: $base-font-family-bold;
+      padding: 0 0 8px;
+   }
+
+   &__items-item-descr {
+      font-size: 14px;
+      font-family: $base-font-family-bold;
+
+      @include mobile {
+         font-size: 16px;
+      }
+   }
+
+   &__form-inner {
+      width: 981px;
+      padding: 60px 18px 18px;
+
+      @include tablet {
+         width: 100%;
+      }
+   }
+
+   &__form-title {
+      text-transform: uppercase;
+      text-align: center;
+      color: $dark-text-color-3;
+      font-size: 48px;
+      padding: 0 0 15px;
+   }
+
+   &__form-legend {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 22px;
+      font-family: $secondary-font-family-bold;
+      color: $dark-text-color-3;
+      padding: 0 0 45px;
+   }
+
+   &__form-group {
+      padding: 25px 0 0;
+   }
+
+   &__form-label {
+      display: block;
+      color: $dark-text-color-2;
+      text-transform: uppercase;
+      cursor: pointer;
+   }
+
+   &__form-label,
+   &__form-input,
+   &__form-textarea {
+      font-family: $base-font-family;
+      font-size: 14px;
+      color: $dark-text-color-2;
+      opacity: 0.6;
+
+      @include mobile {
+         font-size: 16px;
+      }
+   }
+
+   &__form-input,
+   &__form-textarea {
+      border: none;
+      border-bottom: 1.5px solid $light-grey-color;
+      outline: none;
+      width: 100%;
+      background-color: transparent;
+      height: 28px;
+      padding: 5px;
+
+      &::placeholder {
+         font-family: $base-font-family;
+         font-size: 14px;
+         color: $dark-text-color-2;
+         opacity: 0.6;
+      }
+   }
+
+   &__form-textarea {
+      resize: none;
+      overflow: hidden;
+   }
+
+   &__form-btn-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 40px 0 0;
+   }
+
+   &__form-btn {
+      border: none;
+      outline: none;
+      background-color: $btn-color;
+      padding: 12px 55px;
+      text-transform: uppercase;
+      color: #000;
+      font-family: $base-font-family;
+      color: $dark-text-color-1;
+      font-size: 16px;
+
+      @include mobile {
+         font-size: 19px;
+      }
+   }
+}
+
+.partners {
+   padding: 115px 0 70px;
+   display: flex;
+   justify-content: center;
+
+   @include mobile {
+      padding-bottom: 90px;
+   }
+
+   &__inner {
+      width: $content-width + 20px;
+      padding: 0 18px;
+
+      @include tablet {
+         width: 100%;
+      }
+   }
+
+   &__title {
+      text-align: center;
+      text-transform: uppercase;
+      padding: 0 0 50px;
+   }
+
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   &__list-item {
+      flex: 0 0 20%;
+      max-width: 20%;
+      border: 1px solid $light-grey-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 170px;
+
+      @include mobile {
+         max-width: 50%;
+         flex-basis: 50%;
+      }
+   }
+
+   &__logo {
+      max-width: 73%;
+      width: 100%;
+      height: auto;
    }
 }

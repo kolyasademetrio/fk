@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 window.onload = () => {
    // IIFE code wrapping
    (() => {
-      // $('.js-projects-slider').slick();
-
-
       let $slickElements = $('.js-projects-slider');
 
       $slickElements.each((index, elem) => {
@@ -35,5 +32,19 @@ window.onload = () => {
          });
 
       });
+   })();
+
+   (() => {
+      $('.js-stories-slider').slick({
+         slidesToShow: 3,
+         slidesToScroll: 1,
+         mobileFirst: true,
+         responsive: [
+               {
+                       breakpoint: 768,
+                       settings: 'unslick'
+               }
+         ]
+       });
    })();
 }
