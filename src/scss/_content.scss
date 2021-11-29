@@ -1051,3 +1051,63 @@ body {
       height: auto;
    }
 }
+
+.media {
+   padding: 50px 0;
+   display: flex;
+   justify-content: center;
+   background: url('../images/img5.png') top center no-repeat;
+   background-size: 100% auto;
+
+   @include mobile {
+      padding-top: 25px;
+      padding-bottom: 70px;
+      background-image: url('../images/img5-mo.png');
+   }
+
+   &__inner {
+      width: $content-width + 20px;
+      padding: 0 18px;
+
+      @include tablet {
+         width: 100%;
+      }
+   }
+
+   &__title {
+      text-align: center;
+      text-transform: uppercase;
+      padding: 0 0 50px;
+   }
+
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   &__list-item {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 0 15px 50px;
+
+      @include mobile {
+         max-width: 100%;
+         flex-basis: 100%;
+         padding-left: 0;
+         padding-right: 0;
+      }
+   }
+
+   &__text {
+      margin: 8px 0 0;
+   }
+
+   &__paragraph {
+      font-size: 18px;
+      line-height: 1.4;
+
+      @include mobile {
+         font-size: 20px;
+      }
+   }
+}
