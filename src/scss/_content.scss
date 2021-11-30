@@ -932,20 +932,12 @@ body {
    }
 
    &__form-group {
-      padding: 25px 0 0;
+      padding: 0;
    }
 
-   &__form-label {
-      display: block;
-      color: $dark-text-color-2;
-      text-transform: uppercase;
-      cursor: pointer;
-   }
-
-   &__form-label,
    &__form-input,
    &__form-textarea {
-      font-family: $base-font-family;
+      font-family: $base-font-family-bold;
       font-size: 14px;
       color: $dark-text-color-2;
       opacity: 0.6;
@@ -962,20 +954,65 @@ body {
       outline: none;
       width: 100%;
       background-color: transparent;
-      height: 28px;
-      padding: 5px;
+      padding: 17px 5px 15px;
+      color: $dark-text-color-1;
+      font-family: $secondary-font-family-bold;
+      font-size: 14px;
+      text-transform: uppercase;
 
       &::placeholder {
-         font-family: $base-font-family;
+         font-family: $secondary-font-family-bold;
          font-size: 14px;
          color: $dark-text-color-2;
          opacity: 0.6;
+         text-transform: uppercase;
       }
    }
 
    &__form-textarea {
       resize: none;
       overflow: hidden;
+   }
+
+   &__form-label {
+      color: $dark-text-color-2;
+      font-family: $secondary-font-family-bold;
+      font-size: 14px;
+      text-transform: uppercase;
+      opacity: 0.35;
+      padding: 0 0 0 5px;
+   }
+
+   &__form-group-header {
+      padding: 20px 0 0;
+   }
+
+   &__form-tabs-list,
+   &__form-group-header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+   }
+
+   &__form-tabs-list {
+      padding: 0 9px 0 0;
+   }
+
+   &__form-tabs-list-item {
+      padding: 6px 12px;
+      cursor: pointer;
+   }
+
+   &__form-tabs-list-item-img {
+      max-width: 24px;
+      filter: grayscale(100%);
+      transition: $base-transition;
+
+      &.js-active,
+      &:hover {
+         filter: none;
+      }
+      
    }
 
    &__form-btn-wrap {

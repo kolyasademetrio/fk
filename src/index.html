@@ -385,12 +385,31 @@
                      Ми зв'яжемося з вами
                   </legend>
                   <div class="helpus__form-group">
-                     <label for="helpus-name" class="helpus__form-label">Як до Вас звертатися</label>
-                     <input class="helpus__form-input" id="helpus-name" name="helpus-name" type="text">
+                     <input class="helpus__form-input" id="helpus-name" name="helpus-name" type="text" placeholder="Як до Вас звертатися">
                   </div>
                   <div class="helpus__form-group">
-                     <label for="helpus-descr" class="helpus__form-label">Як до Вас звертатися</label>
-                     <textarea class="helpus__form-textarea" id="helpus-descr" name="helpus-descr" rows="1"></textarea>
+                     <div class="helpus__form-group-header">
+                        <label for="" class="helpus__form-label">Як з вами зв'язатися</label>
+                        <ul class="helpus__form-tabs-list">
+                           <li class="helpus__form-tabs-list-item js-form-tabs-list-item-header">
+                              <img src="images/icons/phone.png" alt="" class="helpus__form-tabs-list-item-img js-active">
+                           </li>
+                           <li class="helpus__form-tabs-list-item js-form-tabs-list-item-header">
+                              <img src="images/icons/email.png" alt="" class="helpus__form-tabs-list-item-img">
+                           </li>
+                        </ul>
+                     </div>
+                     <ul class="helpus__form-group-footer">
+                        <li class="helpus__form-group-footer-item js-form-tabs-list-item-footer">
+                           <input class="helpus__form-input js-mask-phone" id="helpus-name" name="helpus-name" type="text" placeholder="+38 0__ ___ __ __">
+                        </li>
+                        <li class="helpus__form-group-footer-item js-form-tabs-list-item-footer">
+                           <input class="helpus__form-input" id="helpus-name" name="helpus-name" type="email" placeholder="Ваш e-mail">
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="helpus__form-group">
+                     <textarea class="helpus__form-textarea" id="helpus-descr" name="helpus-descr" rows="1" placeholder="чим саме ви хочете допомогти"></textarea>
                   </div>
                </fieldset>
 
@@ -443,28 +462,32 @@
          </h2>
          <ul class="media__list">
             <li class="media__list-item">
-               <figure class="media__item-inner">
-                  <div class="media__img-wrap">
-                     <img src="images/media/media1.jpg" alt="" class="media__img">
-                  </div>
-                  <figcaption class="media__text">
-                     <p class="media__paragraph">
-                        Черкаський реабілітаційний центр Братів Кузьміних тепер із сауною завдяки Черкаському осередку РПЛ
-                     </p>
-                  </figcaption>
-               </figure>
+               <a class="media__list-item-link" href="" target="_blank">
+                  <figure class="media__item-inner">
+                     <div class="media__img-wrap">
+                        <img src="images/media/media1.jpg" alt="" class="media__img">
+                     </div>
+                     <figcaption class="media__text">
+                        <p class="media__paragraph">
+                           Черкаський реабілітаційний центр Братів Кузьміних тепер із сауною завдяки Черкаському осередку РПЛ
+                        </p>
+                     </figcaption>
+                  </figure>
+               </a>
             </li>
             <li class="media__list-item">
-               <figure class="media__item-inner">
-                  <div class="media__img-wrap">
-                     <img src="images/media/media2.jpg" alt="" class="media__img">
-                  </div>
-                  <figcaption class="media__text">
-                     <p class="media__paragraph">
-                        За год работы «Фонд братьев Кузьминых» собрал 4 млн. грн на лечение военных - Житомир.info
-                     </p>
-                  </figcaption>
-               </figure>
+               <a class="media__list-item-link" href="" target="_blank">
+                  <figure class="media__item-inner">
+                     <div class="media__img-wrap">
+                        <img src="images/media/media2.jpg" alt="" class="media__img">
+                     </div>
+                     <figcaption class="media__text">
+                        <p class="media__paragraph">
+                           За год работы «Фонд братьев Кузьминых» собрал 4 млн. грн на лечение военных - Житомир.info
+                        </p>
+                     </figcaption>
+                  </figure>
+               </a>
             </li>
          </ul>
       </div>

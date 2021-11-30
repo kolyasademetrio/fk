@@ -1158,22 +1158,16 @@ body {
   padding: 0 0 45px;
 }
 .helpus__form-group {
-  padding: 25px 0 0;
+  padding: 0;
 }
-.helpus__form-label {
-  display: block;
-  color: #403c33;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.helpus__form-label, .helpus__form-input, .helpus__form-textarea {
-  font-family: "calibri-regular", sans-serif;
+.helpus__form-input, .helpus__form-textarea {
+  font-family: "calibri-bold", sans-serif;
   font-size: 14px;
   color: #403c33;
   opacity: 0.6;
 }
 @media screen and (max-width: 768px) {
-  .helpus__form-label, .helpus__form-input, .helpus__form-textarea {
+  .helpus__form-input, .helpus__form-textarea {
     font-size: 16px;
   }
 }
@@ -1183,42 +1177,91 @@ body {
   outline: none;
   width: 100%;
   background-color: transparent;
-  height: 28px;
-  padding: 5px;
+  padding: 17px 5px 15px;
+  color: #272013;
+  font-family: "iosevka-bold", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 .helpus__form-input::-webkit-input-placeholder, .helpus__form-textarea::-webkit-input-placeholder {
-  font-family: "calibri-regular", sans-serif;
+  font-family: "iosevka-bold", sans-serif;
   font-size: 14px;
   color: #403c33;
   opacity: 0.6;
+  text-transform: uppercase;
 }
 .helpus__form-input::-moz-placeholder, .helpus__form-textarea::-moz-placeholder {
-  font-family: "calibri-regular", sans-serif;
+  font-family: "iosevka-bold", sans-serif;
   font-size: 14px;
   color: #403c33;
   opacity: 0.6;
+  text-transform: uppercase;
 }
 .helpus__form-input:-ms-input-placeholder, .helpus__form-textarea:-ms-input-placeholder {
-  font-family: "calibri-regular", sans-serif;
+  font-family: "iosevka-bold", sans-serif;
   font-size: 14px;
   color: #403c33;
   opacity: 0.6;
+  text-transform: uppercase;
 }
 .helpus__form-input::-ms-input-placeholder, .helpus__form-textarea::-ms-input-placeholder {
-  font-family: "calibri-regular", sans-serif;
+  font-family: "iosevka-bold", sans-serif;
   font-size: 14px;
   color: #403c33;
   opacity: 0.6;
+  text-transform: uppercase;
 }
 .helpus__form-input::placeholder, .helpus__form-textarea::placeholder {
-  font-family: "calibri-regular", sans-serif;
+  font-family: "iosevka-bold", sans-serif;
   font-size: 14px;
   color: #403c33;
   opacity: 0.6;
+  text-transform: uppercase;
 }
 .helpus__form-textarea {
   resize: none;
   overflow: hidden;
+}
+.helpus__form-label {
+  color: #403c33;
+  font-family: "iosevka-bold", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0.35;
+  padding: 0 0 0 5px;
+}
+.helpus__form-group-header {
+  padding: 20px 0 0;
+}
+.helpus__form-tabs-list, .helpus__form-group-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.helpus__form-tabs-list {
+  padding: 0 9px 0 0;
+}
+.helpus__form-tabs-list-item {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.helpus__form-tabs-list-item-img {
+  max-width: 24px;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: all 0.6s ease 0s;
+  -o-transition: all 0.6s ease 0s;
+  transition: all 0.6s ease 0s;
+}
+.helpus__form-tabs-list-item-img.js-active, .helpus__form-tabs-list-item-img:hover {
+  -webkit-filter: none;
+          filter: none;
 }
 .helpus__form-btn-wrap {
   display: -webkit-box;
