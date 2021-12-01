@@ -1228,7 +1228,7 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   opacity: 0.35;
-  padding: 0 0 0 5px;
+  padding: 5px 0 0 5px;
 }
 .helpus__form-group-header {
   padding: 20px 0 0;
@@ -1262,6 +1262,12 @@ body {
 .helpus__form-tabs-list-item-img.js-active, .helpus__form-tabs-list-item-img:hover {
   -webkit-filter: none;
           filter: none;
+}
+.helpus__form-group-footer-item {
+  display: none;
+}
+.helpus__form-group-footer-item.js-active {
+  display: block;
 }
 .helpus__form-btn-wrap {
   display: -webkit-box;

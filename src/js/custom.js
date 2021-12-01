@@ -51,4 +51,24 @@ window.onload = () => {
    (() => {
       $('.js-mask-phone').mask('+38 099 999 99 99');
    })();
+
+   (() => {
+      const tabs = document.querySelectorAll('.js-form-tabs-list-item-header');
+      const tabsIcons = document.querySelectorAll('.js-form-tabs-list-item-header-icon');
+      const tabsContent = document.querySelectorAll('.js-form-tabs-list-item-footer');
+
+      for (let i = 0; i < tabs.length; i++) {
+         tabs[i].addEventListener('click', e => {
+            for (let k = 0; k < tabs.length; k++) {
+               tabs[k].getElementsByClassName('js-form-tabs-list-item-header-icon')[0].classList.remove('js-active');
+            }
+            tabs[i].getElementsByClassName('js-form-tabs-list-item-header-icon')[0].classList.add('js-active');
+
+            for (let j = 0; j < tabsContent.length; j++) {
+               tabsContent[j].classList.remove('js-active');
+            }
+            tabsContent[i].classList.add('js-active');
+         });
+      }
+   })();
 }

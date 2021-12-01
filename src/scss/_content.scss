@@ -980,7 +980,7 @@ body {
       font-size: 14px;
       text-transform: uppercase;
       opacity: 0.35;
-      padding: 0 0 0 5px;
+      padding: 5px 0 0 5px;
    }
 
    &__form-group-header {
@@ -1013,6 +1013,14 @@ body {
          filter: none;
       }
       
+   }
+
+   &__form-group-footer-item {
+      display: none;
+
+      &.js-active {
+         display: block;
+      }
    }
 
    &__form-btn-wrap {
