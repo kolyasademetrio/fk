@@ -1221,3 +1221,226 @@ body {
       max-width: 40px;
    }
 }
+
+.footer {
+   padding: 105px 0 0;
+   background: $dark url('../images/footer.jpg') center center no-repeat;
+   background-size: 100% 100%;
+
+   @include mobile {
+      padding-top: 85px;
+      background-image: url('../images/footer-mo.jpg');
+   }
+
+   &-top {
+      display: flex;
+      justify-content: center;
+      padding: 0 0 105px;
+
+      @include mobile {
+         padding-bottom: 70px;
+      }
+
+      * {
+         color: $light-text-color;
+      }
+
+      &__inner {
+         width: 995px;
+         padding: 0 18px;
+         display: flex;
+         justify-content: space-between;
+         align-items: flex-start;
+
+         @include tablet {
+            width: 100%;
+         }
+
+         @include mobile {
+            flex-wrap: wrap;
+            flex-direction: column;
+         }
+      }
+
+      &__title {
+         font-size: 30px;
+         text-transform: uppercase;
+         text-align: center;
+         padding: 50px 0 40px;
+
+         @include mobile {
+            font-size: 36px;
+            text-align: left;
+         }
+      }
+
+      &__contacts {
+         @include mobile {
+            order: 2;
+         }
+      }
+
+      &__phones-list {
+         padding: 0 0 25px;
+      }
+
+      &__phones-list-item {
+         &:not(:last-child) {
+            padding: 0 0 10px;
+         }
+      }
+
+      &__phones-list-item-link {
+         font-family: $base-font-family-bold;
+         font-size: 22px;
+
+         @include mobile {
+            font-size: 30px;
+         }
+      }
+
+      &__emailes-list-item-link,
+      &__addresses-list-item-link,
+      &__address {
+         font-family: $base-font-family-bold;
+         font-style: normal;
+         font-size: 18px;
+
+         @include mobile {
+            font-size: 22px;
+         }
+      }
+
+      &__emailes-list {
+         padding: 0 0 40px;
+
+         @include mobile {
+            padding-bottom: 70px;
+         }
+      }
+
+      &__docs-list-item {
+         &:not(:last-child) {
+            padding: 0 0 10px;
+         }
+      }
+
+      &__docs-list-item-link {
+         font-size: 16px;
+         padding: 0 0 0 39px;
+         position: relative;
+         left: -6px;
+         background: url('../images/icons/pdf-icon.png') left center no-repeat;
+         background-size: 25px 25px;
+         display: block;
+         height: 25px;
+
+         @include mobile {
+            font-size: 22px;
+            height: 38px;
+            background-size: 38px 38px;
+            padding-left: 57px;
+            left: 0;
+         }
+      }
+
+      &__docs-list-item-link-decor {
+         text-decoration: underline;
+      }
+
+      &__address {
+         @include mobile {
+            order: 3;
+         }
+      }
+
+      &__addresses-list-item {
+         &:not(:last-child) {
+            padding: 0 0 35px;
+
+            @include mobile {
+               padding-bottom: 20px;
+            }
+         }
+      }
+
+      &__logo-wrap {
+         flex: 1 0 auto;
+         display: flex;
+         justify-content: center;
+
+         @include mobile {
+            order: 1;
+         }
+      }
+
+      &__logo-img {
+         max-width: 310px;
+
+         @include mobile {
+            max-width: 330px;
+         }
+      }
+   }
+
+   &-middle {
+      display: flex;
+      justify-content: center;
+
+      &__inner {
+         width: $content-width + 20px;
+         padding: 0 18px;
+         
+         @include tablet {
+            width: 100%;
+         }
+      }
+      
+      &__nav {
+         border-top: 1px solid #464646;
+         border-bottom: 1px solid #464646;
+         display: flex;
+         justify-content: center;
+      }
+
+      &__menu {
+         display: flex;
+         justify-content: center;
+
+         @include tablet {
+            flex-direction: column;
+         }
+
+         @include mobile {
+            padding-top: 25px;
+            padding-bottom: 25px;
+         }
+      }
+
+      &__menu-item {
+         padding: 32px 28px;
+
+         @include tablet {
+            padding-left: 15px;
+            padding-right: 15px;
+         }
+
+         @include mobile {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            text-align: center;
+         }
+      }
+
+      &__menu-link {
+         text-transform: uppercase;
+         font-family: $secondary-font-family-bold;
+         font-size: 14px;
+         color: $light-text-color;
+
+         @include tablet {
+            font-size: 18px;
+         }
+      }
+   }
+}
