@@ -1443,4 +1443,44 @@ body {
          }
       }
    }
+
+   &-bottom {
+      display: flex;
+      justify-content: center;
+
+      &__inner {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+
+         width: $content-width + 20px;
+         padding: 5px 18px;
+         
+         @include tablet {
+            width: 100%;
+         }
+      }
+
+      &__copy {
+         &_secondary {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+         }
+      }
+
+      &__copy-paragraph {
+         color: $light-text-color;
+         font-size: 12px;
+
+         @include mobile {
+            font-size: 14px;
+         }
+      }
+
+      &__copy-logo {
+         width: 42px;
+         margin: 0 0 0 14px;
+      }
+   }
 }
