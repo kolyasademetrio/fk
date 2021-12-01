@@ -520,6 +520,9 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding: 0 0 100px;
 }
 @media screen and (max-width: 1024px) {
@@ -633,7 +636,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(16, 16, 16, 0.1);
+  background-color: #f7f7f7;
+  opacity: 1;
   color: #272013;
   font-size: 18px;
   bottom: -18px;
@@ -1426,5 +1430,73 @@ body {
   .media__paragraph {
     font-size: 20px;
   }
+}
+
+.folowus {
+  padding: 70px 0 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #e8be21 url("../images/img6.jpg") center center no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 768px) {
+  .folowus {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-image: url("../images/img6-mo.jpg");
+  }
+}
+.folowus__inner {
+  width: 1160px;
+  padding: 0 18px;
+}
+@media screen and (max-width: 1024px) {
+  .folowus__inner {
+    width: 100%;
+  }
+}
+.folowus__title {
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 0 20px;
+}
+.folowus__subtitle {
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 0 36px;
+}
+.folowus__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.folowus__list-item {
+  margin: 0 20px;
+}
+.folowus__list-item:first-child {
+  margin-left: 0;
+}
+.folowus__list-item:last-child {
+  margin-right: 0;
+}
+.folowus__list-item-icon {
+  max-height: 32px;
+  max-width: 40px;
 }
 /*# sourceMappingURL=style.css.map */

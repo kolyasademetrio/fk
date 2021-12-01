@@ -329,6 +329,7 @@ body {
    &__list-item {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       padding: 0 0 100px;
 
       @include tablet {
@@ -436,7 +437,8 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $btn-color;
+      background-color: $btn-color-not-transparent;
+      opacity: 1;
       color: $dark-text-color-1;
       font-size: 18px;
       bottom: -18px;
@@ -1154,5 +1156,68 @@ body {
       @include mobile {
          font-size: 20px;
       }
+   }
+}
+
+.folowus {
+   padding: 70px 0 110px;
+   display: flex;
+   justify-content: center;
+   background: $yellow-color url('../images/img6.jpg') center center no-repeat;
+   background-size: cover;
+
+   @include mobile {
+      padding-top: 70px;
+      padding-bottom: 70px;
+      background-image: url('../images/img6-mo.jpg');
+   }
+
+   &__inner {
+      width: $content-width + 20px;
+      padding: 0 18px;
+
+      @include tablet {
+         width: 100%;
+      }
+   }
+
+   &__title {
+      color: $light-text-color;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 0 0 20px;
+   }
+
+   &__subtitle {
+      color: $light-text-color;
+      font-size: 22px;
+      line-height: 1.5;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 0 0 36px;
+   }
+
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+   }
+
+   &__list-item {
+      margin: 0 20px;
+
+      &:first-child {
+         margin-left: 0;
+      }
+
+      &:last-child {
+         margin-right: 0;
+      }
+   }
+
+   &__list-item-icon {
+      max-height: 32px;
+      max-width: 40px;
    }
 }
