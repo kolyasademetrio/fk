@@ -2,7 +2,28 @@
    <section class="header">
       <div class="header__inner">
          <div class="header__top">
+            <div class="header__top-langs">
+               <ul class="langs">
+                  <li class="langs__item">
+                     <a href="" class="langs__link">Eng</a>
+                  </li>
+                  <li class="langs__item active">
+                     <a href="" class="langs__link">Укр</a>
+                  </li>
+               </ul>
+            </div>
 
+            <div class="header__top-btn-wrap">
+               <a class="header__top-btn">Долучитися <span class="header__top-btn-arrow">&rarr;</span></a>
+            </div>
+
+            <div class="header__top-hamburger-wrap">
+               <button class="header__top-hamburger js-popup-main-open">
+                  <span class="header__top-hamburger-line"></span>
+                  <span class="header__top-hamburger-line"></span>
+                  <span class="header__top-hamburger-line"></span>
+               </button>
+            </div>
          </div>
          <div class="header__middle">
             <a href="" class="header__logo-link">
@@ -613,4 +634,21 @@
          </div>
       </section>
    </footer>
+
+   <div class="popup-main js-popup-main">
+      <div class="popup-main__inner">
+         <div class="popup-main__content">
+            <ul class="langs langs_secondary">
+               <li class="langs__item">
+                  <a href="" class="langs__link">Eng</a>
+               </li>
+               <li class="langs__item active">
+                  <a href="" class="langs__link">Укр</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="popup-main__overlay"></div>
+      <div class="popup-main__close js-popup-main-close">&#10005;</div>
+   </div>
 </main> @@include('parts/footer.html')

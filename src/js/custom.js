@@ -71,4 +71,18 @@ window.onload = () => {
          });
       }
    })();
+
+   (() => {
+      const mainPopupOpenBtn = document.querySelector('.js-popup-main-open');
+      const mainPopupCloseBtn = document.querySelector('.js-popup-main-close');
+      const mainPopup = document.querySelector('.js-popup-main');
+
+      mainPopupOpenBtn.addEventListener('click', e => {
+         mainPopup.classList.add('js-active');
+      })
+
+      mainPopupCloseBtn.addEventListener('click', e => {
+         mainPopup.classList.remove('js-active');
+      })
+   })();
 }
