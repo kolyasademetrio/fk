@@ -62,6 +62,50 @@ body {
    }
 }
 
+.menu {
+      display: flex;
+      justify-content: center;
+
+      @include tablet {
+         flex-direction: column;
+      }
+
+      @include mobile {
+         padding-top: 25px;
+         padding-bottom: 25px;
+      }
+
+   &__item {
+      padding: 32px 20px;
+      text-align: center;
+
+      @include tablet {
+         padding-left: 15px;
+         padding-right: 15px;
+      }
+
+      @include mobile {
+         padding-top: 15px;
+         padding-bottom: 15px;
+      }
+   }
+
+   &__link {
+      text-transform: uppercase;
+      font-family: $secondary-font-family-bold;
+      font-size: 14px;
+      color: $light-text-color;
+
+      &:hover {
+         color: $yellow-color;
+      }
+
+      @include tablet {
+         font-size: 18px;
+      }
+   }
+}
+
 .header {
    background: #0d1016 url("../images/img1.jpg") center center no-repeat;
    background-size: cover;
@@ -211,6 +255,7 @@ body {
       color: #92918f;
       padding: 0 0 21px;
       background: url("../images/scroll-down-icon.png") center bottom no-repeat;
+      cursor: default;
    }
 }
 
@@ -641,10 +686,10 @@ body {
    &__subtitle {
       padding: 115px 0 0;
       text-align: center;
+      text-transform: uppercase;
 
       @include tablet {
          padding-top: 60px;
-         text-transform: uppercase;
       }
    }
 
@@ -715,7 +760,7 @@ body {
    &__figcaption {
       background-color: $dark;
       color: #fff;
-      padding: 15px 5px 32px;
+      padding: 15px 5px 32px 10px;
    }
 
    &__name {
@@ -927,7 +972,7 @@ body {
    flex-direction: column;
 
    @include mobile {
-      background-image: url('../images/img4-mo.jpg');
+      background-image: url("../images/img4-mo.jpg");
       padding-bottom: 105px;
    }
 
@@ -1124,7 +1169,6 @@ body {
       &:hover {
          filter: none;
       }
-      
    }
 
    &__form-group-footer-item {
@@ -1148,9 +1192,15 @@ body {
       padding: 12px 55px;
       text-transform: uppercase;
       color: #000;
-      font-family: $base-font-family;
+      font-family: $base-font-family-bold;
       color: $dark-text-color-1;
       font-size: 16px;
+      transition: $base-transition;
+
+      &:hover {
+         color: $light-text-color;
+         background-color: $yellow-color;
+      }
 
       @include mobile {
          font-size: 19px;
@@ -1213,13 +1263,13 @@ body {
    padding: 50px 0;
    display: flex;
    justify-content: center;
-   background: url('../images/img5.png') top center no-repeat;
+   background: url("../images/img5.png") top center no-repeat;
    background-size: 100% auto;
 
    @include mobile {
       padding-top: 25px;
       padding-bottom: 70px;
-      background-image: url('../images/img5-mo.png');
+      background-image: url("../images/img5-mo.png");
    }
 
    &__inner {
@@ -1273,13 +1323,13 @@ body {
    padding: 70px 0 110px;
    display: flex;
    justify-content: center;
-   background: $yellow-color url('../images/img6.jpg') center center no-repeat;
+   background: $yellow-color url("../images/img6.jpg") center center no-repeat;
    background-size: cover;
 
    @include mobile {
       padding-top: 70px;
       padding-bottom: 70px;
-      background-image: url('../images/img6-mo.jpg');
+      background-image: url("../images/img6-mo.jpg");
    }
 
    &__inner {
@@ -1334,12 +1384,12 @@ body {
 
 .footer {
    padding: 105px 0 0;
-   background: $dark url('../images/footer.jpg') center center no-repeat;
+   background: $dark url("../images/footer.jpg") center center no-repeat;
    background-size: 100% 100%;
 
    @include mobile {
       padding-top: 85px;
-      background-image: url('../images/footer-mo.jpg');
+      background-image: url("../images/footer-mo.jpg");
    }
 
    &-top {
@@ -1440,10 +1490,21 @@ body {
          padding: 0 0 0 39px;
          position: relative;
          left: -6px;
-         background: url('../images/icons/pdf-icon.png') left center no-repeat;
+         background: url("../images/icons/pdf-icon.png") left center no-repeat;
          background-size: 25px 25px;
          display: block;
          height: 25px;
+         transition: $base-transition;
+
+         * {
+            transition: $base-transition;
+         }
+
+         &:hover {
+            * {
+               color: $yellow-color;
+            }
+         }
 
          @include mobile {
             font-size: 22px;
@@ -1500,57 +1561,17 @@ body {
       &__inner {
          width: $content-width + 20px;
          padding: 0 18px;
-         
+
          @include tablet {
             width: 100%;
          }
       }
-      
+
       &__nav {
          border-top: 1px solid #464646;
          border-bottom: 1px solid #464646;
          display: flex;
          justify-content: center;
-      }
-
-      &__menu {
-         display: flex;
-         justify-content: center;
-
-         @include tablet {
-            flex-direction: column;
-         }
-
-         @include mobile {
-            padding-top: 25px;
-            padding-bottom: 25px;
-         }
-      }
-
-      &__menu-item {
-         padding: 32px 28px;
-         text-align: center;
-
-         @include tablet {
-            padding-left: 15px;
-            padding-right: 15px;
-         }
-
-         @include mobile {
-            padding-top: 15px;
-            padding-bottom: 15px;
-         }
-      }
-
-      &__menu-link {
-         text-transform: uppercase;
-         font-family: $secondary-font-family-bold;
-         font-size: 14px;
-         color: $light-text-color;
-
-         @include tablet {
-            font-size: 18px;
-         }
       }
    }
 
@@ -1566,7 +1587,7 @@ body {
 
          width: $content-width + 20px;
          padding: 5px 18px;
-         
+
          @include mobile {
             width: 100%;
             flex-direction: column;
@@ -1625,7 +1646,7 @@ body {
       bottom: 0;
       right: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, .97);
+      background-color: rgba(0, 0, 0, 0.97);
       z-index: 1;
    }
 
@@ -1642,6 +1663,8 @@ body {
       padding: 20px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      flex-direction: column;
    }
 
    &__close {
@@ -1653,5 +1676,31 @@ body {
       font-size: 30px;
       cursor: pointer;
       z-index: 2;
+   }
+
+   &__logo-wrap {
+      padding: 30px 0 0;
+   }
+
+   &__logo-img {
+      max-width: 160px;
+   }
+
+   &__nav {
+      .menu {
+         flex-direction: column;
+         padding-top: 25px;
+         padding-bottom: 25px;
+      }
+
+      .menu__item {
+         padding-top: 15px;
+         padding-bottom: 15px;
+      }
+
+      .menu__link {
+         font-size: 18px;
+         text-decoration: underline;
+      }
    }
 }
