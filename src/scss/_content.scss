@@ -1701,6 +1701,66 @@ body {
    }
 }
 
+
+
+.popup-secondary {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   z-index: 9999;
+   visibility: hidden;
+   opacity: 0;
+
+   &.js-active {
+      visibility: visible;
+      opacity: 1;
+   }
+
+   &__overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.97);
+      z-index: 1;
+   }
+
+   &__inner {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   &__content {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   &__close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: $light-text-color;
+      font-weight: bold;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 2;
+   }
+
+}
+
 .slick-arrow {
    &:before {
       color: $dark;
