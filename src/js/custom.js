@@ -36,16 +36,36 @@ window.onload = () => {
 
    (() => {
       $('.js-stories-slider').slick({
-         slidesToShow: 3,
+         slidesToShow: 6,
          slidesToScroll: 1,
          mobileFirst: true,
          responsive: [
-               {
-                       breakpoint: 768,
-                       settings: 'unslick'
+            {
+               breakpoint: 1180,
+               settings: {
+                  slidesToShow: 6
                }
+            },
+            {
+               breakpoint: 650,
+               settings: {
+                  slidesToShow: 4
+               }
+            },
+            {
+               breakpoint: 450,
+               settings: {
+                  slidesToShow: 3
+               }
+            },
+            {
+               breakpoint: 320,
+               settings: {
+                  slidesToShow: 2
+               }
+            },
          ]
-       });
+      });
    })();
 
    (() => {
