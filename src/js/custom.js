@@ -99,10 +99,61 @@ window.onload = () => {
 
       mainPopupOpenBtn.addEventListener('click', e => {
          mainPopup.classList.add('js-active');
+         document.body.classList.add('modal-open');
       })
 
       mainPopupCloseBtn.addEventListener('click', e => {
          mainPopup.classList.remove('js-active');
+         document.body.classList.remove('modal-open');
+      })
+   })();
+
+   (() => {
+      const storiesPopupItems = document.querySelectorAll('.js-stories-for-popup-container');
+      const secondaryPopupCloseBtn = document.querySelector('.js-popup-secondary-close');
+      const secondaryPopup = document.querySelector('.js-popup-secondary');
+
+      for (let i = 0; i < storiesPopupItems.length; i++) {
+         storiesPopupItems[i].addEventListener('click', e => {
+
+            let storiesPopupcontent = '';
+
+            if ( e.target.closest('.js-stories-for-popup-item') ) {
+
+               const currentItem = e.target.closest('.js-stories-for-popup-item');
+
+               const storyHeader = currentItem.querySelector('.js-stories-for-popup-item-header').innerHTML;
+
+               const storyImg = currentItem.dataset.img && currentItem.dataset.img;
+               const storyText = currentItem.dataset.text && currentItem.dataset.text;
+   
+               storiesPopupcontent = 
+               `<div class="stories__popup-content">
+                  <div class="stories__popup-img-wrap">
+                     <img class="stories__popup-img" src="${storyImg}"/>
+                  </div>
+                  <div class="stories__popup-text-wrap">
+                     ${storyHeader}
+
+                     <div class="stories__popup-descr">
+                        <p class="stories__descr">
+                           ${storyText}
+                        </p>
+                     </div>
+                  </div>
+               </div>`;
+
+               secondaryPopup.querySelector('.js-popup-secondary-content').innerHTML = storiesPopupcontent;
+            secondaryPopup.classList.add('js-active');
+            document.body.classList.add('modal-open');
+            }
+         })
+      }
+
+      secondaryPopupCloseBtn.addEventListener('click', e => {
+         secondaryPopup.classList.remove('js-active');
+         secondaryPopup.querySelector('.js-popup-secondary-content').innerHTML = '';
+         document.body.classList.remove('modal-open');
       })
    })();
 }

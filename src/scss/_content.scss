@@ -35,6 +35,10 @@ html,
 body {
    height: 100%;
    scroll-behavior: smooth;
+
+   &.modal-open {
+      overflow: hidden;
+   }
 }
 
 .langs {
@@ -704,9 +708,6 @@ body {
    }
 
    &__items {
-      display: flex;
-      justify-content: flex-start;
-      flex: 0 0 auto;
       width: 100%;
 
       &:not(.slick-initialized) {
@@ -730,10 +731,15 @@ body {
       position: relative;
       width: 165px;
       padding: 0 15px;
+      display: inline-block;
 
       &:nth-child(odd) {
          top: 60px;
       }
+   }
+
+   &__figure {
+      cursor: pointer;
    }
 
    &__img-wrap {
@@ -773,11 +779,19 @@ body {
       &_secondary {
          padding-top: 20px;
       }
+
+      .popup-secondary &_secondary {
+         padding-top: 0;
+      }
    }
 
    &__price {
       color: $yellow-color;
       display: block;
+   }
+
+   .popup-secondary &__price {
+      display: inline-block;
    }
 
    &__text-wrap {
@@ -830,6 +844,48 @@ body {
 
    &__paragraph {
       font-size: 16px;
+   }
+
+   &__popup-content {
+      display: flex;
+      align-items: flex-start;
+
+      @include tablet {
+         flex-wrap: wrap;
+      }
+   }
+
+   &__popup-img-wrap {
+      flex: 1 1 65%;
+      max-width: 65%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include tablet {
+         max-width: 100%;
+         flex-basis: 100%;
+      }
+   }
+
+   &__popup-img {
+      max-width: 100%;
+      max-height: 100%;
+   }
+
+   &__popup-text-wrap {
+      flex: 1 1 35%;
+      max-width: 35%;
+      padding: 30px;
+
+      @include tablet {
+         max-width: 100%;
+         flex-basis: 100%;
+      }
+   }
+
+   &__popup-descr {
+      padding-top: 10px;
    }
 }
 
@@ -1665,8 +1721,8 @@ body {
 
    &__close {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 15px;
+      right: 20px;
       color: $light-text-color;
       font-weight: bold;
       font-size: 30px;
@@ -1724,13 +1780,13 @@ body {
       bottom: 0;
       right: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.97);
+      background-color: rgba(0, 0, 0, 0.8);
       z-index: 1;
    }
 
    &__inner {
       position: absolute;
-      top: 0;
+      top: 65px;
       bottom: 0;
       right: 0;
       left: 0;
@@ -1742,16 +1798,16 @@ body {
    }
 
    &__content {
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: #000;
+      margin: 0 7% 7% 7%;
+      max-height: 100%;
+      overflow-y: auto;
    }
 
    &__close {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 15px;
+      right: 20px;
       color: $light-text-color;
       font-weight: bold;
       font-size: 30px;
