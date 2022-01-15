@@ -118,7 +118,7 @@ window.onload = () => {
 
             let storiesPopupcontent = '';
 
-            if ( e.target.closest('.js-stories-for-popup-item') ) {
+            if (e.target.closest('.js-stories-for-popup-item')) {
 
                const currentItem = e.target.closest('.js-stories-for-popup-item');
 
@@ -126,11 +126,31 @@ window.onload = () => {
 
                const storyImg = currentItem.dataset.img && currentItem.dataset.img;
                const storyText = currentItem.dataset.text && currentItem.dataset.text;
-   
-               storiesPopupcontent = 
-               `<div class="stories__popup-content">
+               const imagesArray = storyImg.split(',');
+
+
+               let imagesSlider = '<ul class="slider owl-carousel js-slider">';
+               for (let j = 0; j < imagesArray.length; j++) {
+                  imagesSlider += `<li class="slider__item">
+                                       <div class="slider__item-inner">
+                                          <img class="stories__popup-img" src="${imagesArray[j]}"/>
+                                       </div>
+                                 </li>`;
+               }
+               imagesSlider += '</ul>';
+
+               if ( imagesArray.length > 1 ) {
+                  imagesSlider += `<div class="projects__slider-arrows">
+                                       <button class="projects__slider-arrow projects__slider-arrow-prev js-slider-arrow-prev">&lsaquo;</button>
+                                       <div class="projects__slider-qty js-slider-qty"></div>
+                                       <button class="projects__slider-arrow projects__slider-arrow-next js-slider-arrow-next">&rsaquo;</button>
+                                    </div>`;
+               }
+
+               storiesPopupcontent =
+                  `<div class="stories__popup-content">
                   <div class="stories__popup-img-wrap">
-                     <img class="stories__popup-img" src="${storyImg}"/>
+                     ${imagesSlider}
                   </div>
                   <div class="stories__popup-text-wrap">
                      ${storyHeader}
@@ -144,8 +164,26 @@ window.onload = () => {
                </div>`;
 
                secondaryPopup.querySelector('.js-popup-secondary-content').innerHTML = storiesPopupcontent;
-            secondaryPopup.classList.add('js-active');
-            document.body.classList.add('modal-open');
+               secondaryPopup.classList.add('js-active');
+               document.body.classList.add('modal-open');
+
+               let $status = $('.js-slider').next().find('.js-slider-qty');
+               $('.js-slider').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+                  //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+                  let i = (currentSlide ? currentSlide : 0) + 1;
+                  $status.html(i + '/<span class="projects__slider-qty_sm">' + slick.slideCount + '</span>');
+               });
+
+               let prev = $('.js-slider').next().find('.js-slider-arrow-prev');
+               let next = $('.js-slider').next().find('.js-slider-arrow-next');
+
+
+               $('.js-slider').slick({
+                  autoplay: false,
+                  dots: false,
+                  nextArrow: next,
+                  prevArrow: prev,
+               });
             }
          })
       }
@@ -154,6 +192,7 @@ window.onload = () => {
          secondaryPopup.classList.remove('js-active');
          secondaryPopup.querySelector('.js-popup-secondary-content').innerHTML = '';
          document.body.classList.remove('modal-open');
+         $('.js-slider').slick('unslick');
       })
    })();
 }
